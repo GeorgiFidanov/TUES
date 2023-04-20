@@ -1,0 +1,10 @@
+# Default ignored files
+
+*.xml
+*.pyc
+.vscode
+GitHub/
+.idea
+*.iml
+__pycache__/
+*.db
