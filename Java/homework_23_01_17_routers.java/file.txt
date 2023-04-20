@@ -1,0 +1,6 @@
+packet this is packet content src_ip dst_ip
+router router1 192.168.1.1
+router router2 192.168.1.2
+router router3 192.168.1.3
+packet_info 1 additional_info1 additional_info2
+

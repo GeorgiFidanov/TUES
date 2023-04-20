@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Домашно</title>
+    <meta charset="utf-8">     
+  </head>
+
+  <body>
+    
+    <div id="div1">
+      <div id="rock1"></div>
+      <div id="rock2"></div>
+      <div id="rock3"></div>
+      <div id="rock4"></div>
+      <div id="rock5"></div>
+      <div id="rock6"></div>
+      <div id="rock7"></div>
+      <div id="rock8"></div>
+      <div id="diva1">
+        <img id="img1" src="https://static.wikia.nocookie.net/marveldatabase/images/7/77/Fantastic_Four_Vol_3_61_Textless.jpg/revision/latest?cb=20051218194743">
+        <div id="divaa1">
+          <input id="btna1" type="button" value="Theme">
+          <input id="btna2"  type="button" value="Profile">
+          <input id="btna3" type="button" value="More">
+          <img id="img2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Windows_Settings_app_icon.png/768px-Windows_Settings_app_icon.png">
+          <div id="divaaa1"></div>
+        </div>
+    
+        <div id="divaa2">
+          <img id="img3" src="https://openclipart.org/image/2400px/svg_to_png/399/molumen-phone-icon.png">
+          <div id="divaaa2"></div>
+          <input id="btnb1" type="button" value="Phone">
+          <input id="btnb2" type="button" value="Call">
+        </div>
+    
+        <div id="divaa3">
+          <img id="img3" src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png">
+          <input id="btna1" type="button" value="HAHAHAHAH">
+          <input id="btna2"  type="button" value="HOHOHOH">
+          <input id="btna3" type="button" value="HIHIHIHI">
+
+          <div id="divaaa3"></div>
+          <div id="divaaa4"></div>
+        </div>
+      </div>
+    </div>
+    <h1><div></div></h1><br></p>
+  </body>
+</html>
+
+<style type="text/css">
+  body{
+    background:rgb(0, 45, 60);
+  }
+
+  #rock1{
+    position:absolute;
+    left:-30px;
+    top:0px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    animation:b 6s infinite;
+  }
+  
+  #rock2{
+    position:absolute;
+    left:200px;
+    top:-25px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    animation:a 6s infinite;
+  }
+  
+  #rock3{
+    position:absolute;
+    left:585px;
+    top:5px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    animation:a 6s infinite;
+  }
+  
+  #rock4{
+    position:absolute;
+    left:385px;
+    top:90px;
+    width:40px;
+    height:40px;
+    transform:rotate(45deg);
+    animation:b 6s infinite;
+  }
+  
+  #rock5{
+    position:absolute;
+    left:60px;
+    top:140px;
+    width:25px;
+    height:25px;
+    transform:rotate(45deg);
+    animation:a 6s infinite;
+  }
+  
+  #rock6{
+    position:absolute;
+    left:500px;
+    top:-25px;
+    width:25px;
+    height:25px;
+    transform:rotate(45deg);
+    animation:a 6s infinite;
+  }
+  
+  #rock7{
+    position:absolute;
+    left:60px;
+    top:-55px;
+    width:25px;
+    height:25px;
+    transform:rotate(45deg);
+    animation:b 6s infinite;
+  }
+  
+  #rock8{
+    position:absolute;
+    left:530px;
+    top:130px;
+    width:25px;
+    height:25px;
+    transform:rotate(45deg);
+    animation:b 6s infinite;
+  }
+  
+  @keyframes a{
+    0%{
+      background:transparent;
+    }
+    50%{
+      background:darkorange;
+    }
+    100%{
+      background:transparent;
+    }
+  }
+  
+  @keyframes b{
+    0%{
+      background:darkorange;
+    }
+    50%{
+      background:transparent;
+    }
+    100%{
+      background:darkorange;
+    }
+  }
+  
+  #div1{
+    position:absolute;
+    left:calc(50% - 300px);
+    top:calc(50% - 150px);
+    width:600px;
+    height:100px;
+    border:20px solid rgb(60, 60, 60);
+    border-radius:100px;
+  }
+  
+  #diva1{
+    position:absolute;
+    width:590px;
+    height:90px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #img1{
+    position:absolute;
+    left:15px;
+    top:15px;
+    width:60px;
+  }
+  
+  #img2{
+    position:absolute;
+    left:10px;
+    top:10px;
+    width:60px;
+  }
+  
+  #img3{
+    position:absolute;
+    left:10px;
+    top:10px;
+    width:60px;
+  }
+  
+  #divaa1{
+    position:absolute;
+    left:150px;
+    width:80px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaa1:hover{
+    height:250px;
+  }
+  
+  #divaa1:hover > #divaaa1{
+    height:180px;
+    border:5px solid orange;
+  }
+  
+  #divaaa1{
+    position:absolute;
+    top:-5px;
+    left:75px;
+    width:40px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaa2{
+    position:absolute;
+    left:300px;
+    width:80px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaa2:hover{
+    height:200px;
+  }
+  
+  #divaa2:hover > #divaaa2{
+    height:230px;
+  }
+  
+  #divaaa2{
+    position:absolute;
+    top:-5px;
+    left:-25px;
+    width:25px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaa3{
+    position:absolute;
+    left:450px;
+    width:80px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaa3:hover{
+    height:260px;
+  }
+  
+  #divaa3:hover > #divaaa3{
+    height:200px;
+  }
+  
+  #divaa3:hover > #divaaa4{
+    height:140px;
+  }
+  
+  #divaaa3{
+    position:absolute;
+    top:-5px;
+    left:-50px;
+    width:40px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #divaaa4{
+    position:absolute;
+    top:-5px;
+    left:75px;
+    width:25px;
+    height:80px;
+    border:5px solid orange;
+    border-radius:100px;
+    background:orange;
+    transition:.6s;
+  }
+  
+  #btna1{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa1:hover > #btna1{
+    top:90px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btna2{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa1:hover > #btna2{
+    top:140px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btna3{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa1:hover > #btna3{
+    top:190px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btnb1{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa2:hover > #btnb1{
+    top:90px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btnb2{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa2:hover > #btnb2{
+    top:140px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btnc1{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa3:hover > #btnc1{
+    top:90px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btnc2{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa3:hover > #btnc2{
+    top:140px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }
+  
+  #btnc3{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:Georgia, serif;
+    font-size:15px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+  }
+  
+  #divaa3:hover > #btnc3{
+    top:190px;
+    color:black;
+    background:dimgrey;
+    padding-bottom:5px;
+  }

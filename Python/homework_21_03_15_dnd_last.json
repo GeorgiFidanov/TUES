@@ -1,0 +1,56 @@
+{
+  "Weapons": [
+    {
+      "name": "Handgun",
+      "damage": 50,
+      "critical_strike_percent": 1,
+      "chance": 1
+    },
+    {
+      "name": "Knife",
+      "damage": 5,
+      "critical_strike_percent": 1,
+      "chance": 1
+    },
+    {
+      "name": "Salam",
+      "damage": 1,
+      "critical_strike_percent": 20,
+      "chance": 2
+    }
+  ],
+  "Heroes": [
+    {
+      "name": "Gucci-bucket-hat",
+      "nickname": "The Tank",
+      "health": 100,
+      "maxHealth": 100,
+      "weapon": "Handgun"
+    },
+    {
+      "name": "Sir Lancelot",
+      "nickname": "The Tank",
+      "health": 90,
+      "maxHealth": 100,
+      "weapon": "Knife"
+    }
+  ],
+  "Orcs": [
+    {
+      "name": "Toothpicker",
+      "nickname": "The Brush",
+      "health": 150,
+      "maxHealth": 200,
+      "berserk_factor": 1.5,
+      "weapon": "Salam"
+    },
+    {
+      "name": "Toothlooter",
+      "nickname": "The Paste",
+      "health": 120,
+      "maxHealth": 200,
+      "berserk_factor": 1.2,
+      "weapon": "Knife"
+    }
+  ]
+}
