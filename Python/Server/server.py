@@ -1,3 +1,7 @@
+import sqlite3
+import hashlib
+import socket
+import threading
 from tkinter import *
 from tkinter import filedialog
 from pygame import mixer
@@ -56,6 +60,7 @@ class MusicPlayer:
            raise MyException("No songs there")
 
         self.music_file = self.queue_list[self.current_song]
+        print("Now playing:", self.music_file)
         mixer.music.load(self.music_file)
         mixer.music.play()
 
@@ -67,6 +72,7 @@ class MusicPlayer:
             raise MyException("No songs there")
 
         self.music_file = self.queue_list[self.current_song]
+        print("Now playing:", self.music_file)
         mixer.music.load(self.music_file)
         mixer.music.play()
 
@@ -80,10 +86,10 @@ class MusicPlayer:
             mixer.music.load(self.music_file)
             mixer.music.play()
             self.playing_state = True
-            self.on_song_end()
+            # self.on_song_end()
             if mixer.stop():
                 self.playing_state = False
-                self.on_song_end()
+            #    self.on_song_end()
 
         elif self.queue_list:
             self.music_file = self.queue_list[self.current_song]
@@ -96,7 +102,7 @@ class MusicPlayer:
             self.playing_state = True
             self.current_song += 1
             print("curr song num:", self.current_song)
-            self.on_song_end()
+            # self.on_song_end()
 
     def pause(self):
         if not self.playing_state:
@@ -107,9 +113,34 @@ class MusicPlayer:
             self.playing_state = False
 
 
-if __name__ == '__main__':
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(("localhost", 9999))
 
-    # unittest.main()
-    root = Tk()
-    app = MusicPlayer(root)
-    root.mainloop()
+server.listen()
+
+
+def handle_connection(c):
+    c.send("Username: ".encode())
+    username = c.recv(1024).decode()
+    c.send("Password: ".encode())
+    password = c.recv(1024)
+    password = hashlib.sha256(password).hexdigest()
+
+    conn = sqlite3.connect("userdata.db")
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM userdata WHERE username = ? AND password = ?", (username, password))
+
+    if cur.fetchall():
+        c.send("Login successful!".encode())
+        root = Tk()
+        MusicPlayer(root)
+        root.mainloop()
+
+    else:
+        c.send("Login failed!".encode())
+
+
+while True:
+    client, addr = server.accept()
+    threading.Thread(target=handle_connection, args=(client,)).start()

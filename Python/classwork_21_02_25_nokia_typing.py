@@ -1,52 +1,45 @@
-phoneNumLetter = [str(input("Please enter a phone number that contains letters: "))]
-
-
-def translate(char):
-    number = 0
-    if char.upper() == "A" or char.upper() == "B" or char.upper() == "C":
-        number = 2
-    elif char.upper() == "D" or char.upper() == "E" or char.upper() == "F":
-        number = 3
-    elif char.upper() == "G" or char.upper() == "H" or char.upper() == "I":
-        number = 4
-    elif char.upper() == "J" or char.upper() == "K" or char.upper() == "L":
-        number = 5
-    elif char.upper() == "M" or char.upper() == "N" or char.upper() == "O":
-        number = 6
-    elif char.upper() == "P" or char.upper() == "Q" or char.upper() == "R" or char.upper() == "S":
-        number = 7
-    elif char.upper() == "T" or char.upper() == "U" or char.upper() == "V":
-        number = 8
-    elif char.upper() == "W" or char.upper() == "X" or char.upper() == "Y" or char.upper() == "Z":
-        number = 9
+def translate(letter):
+    number = "0"
+    if letter == "A" or letter == "B" or letter == "C":
+        number = "1"
+    elif letter == "D" or letter == "E" or letter == "F":
+        number = "2"
+    elif letter == "G" or letter == "H" or letter == "I":
+        number = "3"
+    elif letter == "J" or letter == "K" or letter == "L":
+        number = "4"
+    elif letter == "M" or letter == "N" or letter == "O":
+        number = "5"
+    elif letter == "P" or letter == "Q" or letter == "R":
+        number = "6"
+    elif letter == "S" or letter == "T" or letter == "U":
+        number = "7"
+    elif letter == "V" or letter == "W" or letter == "X":
+        number = "8"
+    elif letter == "Y" or letter == "Z":
+        number = "9"
     return number
 
 
 def translateNumber(phoneNumLetter):
-    result =''
-    char =['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
-                      'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    result = ""
+    for i in range(len(phoneNumLetter)):
 
-    number = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    i = 0
+        curr = phoneNumLetter[i]
 
-    if char in phoneNumLetter[i]:
-        result[i] = translate(phoneNumLetter[i])
-        i = i + 1
+        if curr.isalpha():
+            curr = curr.upper()
+            result += translate(curr)
 
-    if number in phoneNumLetter[i]:
-        result[i] = phoneNumLetter[i]
-        i = i + 1
+        elif curr.isnumeric():
+            result += curr
 
-    if phoneNumLetter[i] == number:
-        result[i] = phoneNumLetter[i]
+        else:
+            return print("Your string is invalid, because of simbol:", curr)
 
     return result
 
 
-def main():
-    print("Your original phone number was: ", phoneNumLetter)
-    print("Your translated phone number is: ", translateNumber(phoneNumLetter))
-
-
-main()
+phoneNumLetter = input("Please enter a phone number that contains letters: ")
+print("Your original phone number was:", phoneNumLetter)
+print("Your translated phone number is:", translateNumber(phoneNumLetter))
