@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
-int powfunc(int x,int y){
+int powfunc(int x, int y){
     int a = pow(x,y);
     return a;
 }

@@ -24,7 +24,7 @@ public:
         return legs;
     }
 
-    void set_legs(){
+    void set_legs(int legs){
         this -> legs = legs;
     }
 
@@ -33,7 +33,7 @@ public:
         return name;
     }
 
-    void set_name(){
+    void set_name(string name){
         this -> name = name;
     }
 
@@ -43,11 +43,12 @@ public:
 
 int main()
 {
+    int a = 4;
     Animal cat("chamber", 60);
     cat.get_legs();
-    cat.set_legs();
+    cat.set_legs(a);
     cat.get_name();
-  //  cat.set_name();
+    cat.set_name("Ivan");
     cout << cat.get_name() << endl;
 
     return 0;

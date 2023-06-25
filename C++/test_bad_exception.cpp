@@ -23,10 +23,13 @@ class Product{
         std::string name;
         unsigned int count;
         double price;
-        if(price < 0){
-            throw Illegal_price_Exception("Illegal price; price is less than zero");
+
+        void check_price(){
+            if(price < 0){
+                throw Illegal_price_Exception("Illegal price; price is less than zero");
+            }
         }
-}
+};
 
 int main(){
     cout << "Hello world!" << endl;
