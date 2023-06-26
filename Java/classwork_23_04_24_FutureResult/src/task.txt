@@ -1,0 +1,30 @@
+task:
+Implement the FutureResult interface, which is the result of
+asynchronous operation. The class has methods for taking the result of the operation, or
+waiting for it, and a method for specifying the result of the asynchronous
+operation.
+interface FutureResult<T> {
+public T await();
+public void resolve(T result);
+}
+await() - returns the result of the asynchronous operation. If the result is not yet
+arrived, the thread that called await() is blocked until the result arrives.
+resolve(T result) - sets the result of the operation that await() should return.
+It is possible to have multiple threads waiting for a single result.
+Demonstrate the operation of your class in Main.
+
+
+solution:
+-The FutureResult class uses a synchronized block to ensure that access to the result
+and resolved fields is thread-safe.
+-The await() method waits for the result to arrive if it hasn't already,
+    using a while loop and the wait() method.
+-When the result is set using resolve(), the method sets the result field,
+    sets resolved to true, and notifies all waiting threads using notifyAll().
+
+demo:
+-In this example, a new FutureResult<String> instance is created,
+and a new thread is started to simulate a long-running operation
+that resolves the future with a result after two seconds.
+-The main method then calls await() on the future,
+which blocks until the result is available, and then prints the result to the console.

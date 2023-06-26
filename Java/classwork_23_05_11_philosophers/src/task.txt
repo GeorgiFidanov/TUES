@@ -1,0 +1,10 @@
+You have 5 philosopher and 5 chopsticks, they are all seated around a round table.
+Between each two philosophers there is one stick between them.
+Each philosopher has his onw cycle of thinking,
+then (after he is done) he will try to take a chopstick,
+if he has two sticks he will be able to commit to the next activity,
+which is eating, we're done he will release both of the sticks and will begin thing again.
+One cycle of a philosopher is a thread.
+Implement this task on Java for this multithreaded mutex problem.
+
++bonus task what will happen when all philosophers pick up at the same the left chopstick?
