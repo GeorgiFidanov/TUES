@@ -1,0 +1,103 @@
+<h2>School year 2023 feedback</h2>
+<ng-container *ngIf="isNotSend">
+    <div class="main">
+        <div class="section">
+            <p class="information-box">The goal of this survey is to provide information on students' intereset and participation in all school activities during the 2023 school year</p>
+        </div>
+        <div class="section">
+            <p>Personal information:</p>
+            <div class="personal-information-section">
+                <div class="row">
+                    <label for="name">Name:</label>
+                    <input
+                        class="input-field"
+                        name="'name'"
+                        placeholder="Name"
+                        type="text"
+                        [value]="response.name"
+                        (input)="onInputChange('name', $event)"
+                    >
+                </div>
+                <div class="row">
+                    <label for="surname">Surname:</label>
+                    <input
+                        class="input-field"
+                        name="'surname'"
+                        placeholder="Surname"
+                        type="text"
+                        [value]="response.surname"
+                        (input)="onInputChange('surname', $event)"
+                    >
+                </div>
+                <div class="row">
+                    <label for="phone">Phone:</label>
+                    <input
+                        class="input-field"
+                        name="'phone'"
+                        placeholder="Phone number"
+                        type="text"
+                        [value]="response.phone"
+                        (input)="onInputChange('phone', $event)"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <app-checkbox
+                [listOfAnswers]="checkboxAnswers"
+                [question]="'In which clubs did you participate this year?'"
+                (returnCheckboxValue)="onCheckboxChange($event)"
+            >
+            </app-checkbox>
+        </div>
+        <div class="section">
+            <app-input-range
+                [question]="'How likely are you to recommend this club to a friend?'"
+                [value]="response.recommendScore"
+                (returnInputRangeValue)="onInputRangeChange($event)"
+            >
+            </app-input-range>
+        </div>
+        <div class="section">
+            <app-checkbox
+                [listOfAnswers]="checkboxTues"
+                [question]="'Why did you choose TUES?'"
+               (returnCheckboxValue)="onCheckboxOther($event)"
+               >
+            </app-checkbox>
+            <div *ngIf="isOtherClicked">
+                <div class="row">
+                    <input
+                        class="input-field"
+                        name="'Other'"
+                        placeholder="Enter here:"
+                        type="text"
+                        (input)="onInputChange('Other', $event)"
+                    >
+                </div>
+            </div>
+        </div>
+
+        <div class="section-buttons">
+            <button
+                class="button"
+                (click)="onSend()"
+            >Send Response
+            </button>
+            <button
+                class="button"
+                (click)="onClearResponse()"
+            >Clear response
+            </button>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="!isNotSend">
+    <div class="response-send">
+        <p>Your response has been recorded!</p>
+        <img src="../../../assets/thank-you.jpg" alt="Thank you">
+    </div>
+</ng-container>
+<div *ngIf="isNotSend" class="footer">
+    <app-footer></app-footer>
+</div>

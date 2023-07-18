@@ -1,0 +1,19 @@
+<div>
+    <p>{{ question }}</p>
+    <div *ngFor="let i of radioButtonsData">
+        <input
+            *ngIf="isChecked(i.id)"
+            type="radio"
+            checked
+            (click)="onRadioButtonChange(i.id)"
+        >
+        <input
+            *ngIf="!isChecked(i.id)"
+            type="radio"
+            (click)="onRadioButtonChange(i.id)"
+        >
+        <label
+        >{{ i.name }}
+        </label>
+    </div>
+</div>

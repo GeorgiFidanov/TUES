@@ -1,0 +1,24 @@
+//create the vuicho role in GraphTalk .gtk
+male("Ivan");
+male("Tisho");
+
+female("Milena");
+
+brother("Tisho", "Milena");
+
+mother("Milena", "Ivan");
+vuicho("Tisho", "Ivan");
+
+//we don't care if they are blood or step siblings
+brother(A, B): - 
+    male(A)
+
+//we don't care about the chiled's gender
+mother(E, F): - 
+    female(E)    
+
+vuicho(X, Y): -
+    male(X) &
+    brother(X, Z) &
+    female(Z) &
+    mother(Z, Y)     

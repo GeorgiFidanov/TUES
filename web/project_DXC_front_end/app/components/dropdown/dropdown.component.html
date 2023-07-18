@@ -1,0 +1,14 @@
+<p>{{ question }}</p>
+<select
+    class="dropdown"
+    (change)="onDropdownChange($event)"
+>
+    <option value="" selected hidden>{{ 'Select' }}</option>
+    <option
+        *ngFor="let i of listOfAnswers; let index = index"
+        [title]="listOfAnswers"
+        [selected]="selectedValue === i"
+    >
+        {{ i }}
+    </option>
+</select>

@@ -1,0 +1,16 @@
+<p>{{ question }}</p>
+<div *ngFor="let i of listOfAnswers; let idx = index"
+
+    (click)="onCheckboxChange(i)"
+>
+    <input *ngIf="!i.value"
+        type="checkbox"
+    >
+    <input *ngIf="i.value"
+        type="checkbox"
+        checked
+    >
+    <label>
+        {{ i.name }}
+    </label>
+</div>

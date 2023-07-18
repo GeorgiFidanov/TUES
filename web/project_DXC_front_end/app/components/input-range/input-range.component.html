@@ -1,0 +1,17 @@
+<p>{{ question }}</p>
+<input
+    class="input-range"
+    min="0"
+    max="10"
+    step="1"
+    type="range"
+    [value]="value"
+    (input)="onInputRangeChange($event)"
+>
+<input
+    class="disabled answer-box"
+    [disabled]="true"
+    type="text"
+    [value]="value"
+>
+

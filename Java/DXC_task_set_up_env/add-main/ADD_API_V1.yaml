@@ -1,0 +1,676 @@
+openapi: 3.0.1
+info:
+  title: PRMP MS Ispettori
+  description: 'API of Ispettori microservice of application PRMP (Prenotazione Revizioni Mezzi Pesanti)'
+  version: 0.0.9
+
+tags:
+
+  - name: user
+    description: User API
+
+  - name: add-type
+    description: Add Type API
+
+  - name: category
+    description: Category API
+
+  - name: location
+    description: Location API
+
+paths:
+
+  /user:
+    get:
+      tags:
+        - user
+      summary: Get all users
+      operationId: getAllUsers
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/user'
+
+    post:
+      tags:
+        - user
+      summary: Create user
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/create-user'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+  /user/{id}:
+    get:
+      tags:
+        - user
+      summary: Get user by ID
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+    put:
+      tags:
+        - user
+      summary: Update user by ID
+      operationId: updateUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update-user'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+    patch:
+      tags:
+        - user
+      summary: Change user password
+      operationId: changeUserPassword
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/change-password'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
+    delete:
+      tags:
+        - user
+      summary: Delete user by ID
+      operationId: deleteUserById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content: { }
+
+
+  /add-type:
+    get:
+      tags:
+        - add-type
+      summary: Get all add types
+      operationId: getAllAddTypes
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/add-type'
+
+    post:
+      tags:
+        - add-type
+      summary: Create add type
+      operationId: createAddType
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-add-type'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/add-type'
+
+  /add-type/{id}:
+    get:
+      tags:
+        - add-type
+      summary: Get add type by ID
+      operationId: getAddTypeById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/add-type'
+
+    put:
+      tags:
+        - add-type
+      summary: Update add type by ID
+      operationId: updateAddTypeById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-add-type'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/add-type'
+
+    delete:
+      tags:
+        - add-type
+      summary: Delete add type by ID
+      operationId: deleteAddTypeById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content: { }
+
+
+  /category:
+    get:
+      tags:
+        - category
+      summary: Get all categories
+      operationId: getAllCategories
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/category'
+
+    post:
+      tags:
+        - category
+      summary: Create category
+      operationId: createCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-category'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/category'
+
+  /category/{id}:
+    get:
+      tags:
+        - category
+      summary: Get category by ID
+      operationId: getCategoryById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/category'
+
+    put:
+      tags:
+        - category
+      summary: Update category by ID
+      operationId: updateCategoryById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-category'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/category'
+
+    delete:
+      tags:
+        - category
+      summary: Delete category by ID
+      operationId: deleteCategoryById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content: { }
+
+
+  /location:
+    get:
+      tags:
+        - location
+      summary: Get all locations
+      operationId: getAllLocation
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/location'
+
+    post:
+      tags:
+        - location
+      summary: Create location
+      operationId: createLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-location'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+
+  /location/{id}:
+    get:
+      tags:
+        - location
+      summary: Get location by ID
+      operationId: getLocationById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+
+    put:
+      tags:
+        - location
+      summary: Update location by ID
+      operationId: updateLocationById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/perform-location'
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/location'
+
+    delete:
+      tags:
+        - location
+      summary: Delete location by ID
+      operationId: deleteLocationById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        400:
+          description: Bad Request
+          content: { }
+        404:
+          description: Not Found
+          content: { }
+        200:
+          description: Successful response
+          content: { }
+
+
+components:
+  schemas:
+
+    errorDTO:
+      type: object
+      properties:
+        error:
+          type: string
+
+
+    user:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username:
+          type: string
+          nullable: false
+
+    create-user:
+      type: object
+      required:
+        - username
+        - password
+        - confirm-password
+      properties:
+        username:
+          type: string
+          nullable: false
+        password:
+          type: string
+          nullable: false
+        confirm-password:
+          type: string
+          nullable: false
+
+    update-user:
+      type: object
+      required:
+        - username
+      properties:
+        username:
+          type: string
+          nullable: false
+
+    change-password:
+      type: object
+      required:
+        - password
+        - new-password
+        - confirm-password
+      properties:
+        password:
+          type: string
+          nullable: false
+        new-password:
+          type: string
+          nullable: false
+        confirm-password:
+          type: string
+          nullable: false
+
+
+    add-type:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          nullable: false
+
+    perform-add-type:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          nullable: false
+
+
+    category:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          nullable: false
+
+    perform-category:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          nullable: false
+
+
+    location:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+          nullable: false
+
+    perform-location:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          nullable: false
+

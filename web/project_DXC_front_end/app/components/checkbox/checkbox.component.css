@@ -1,0 +1,19 @@
+p {
+    padding-left: 10px;
+    margin: auto;
+    color: rgb(68, 68, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+label {
+    padding-left: 10px;
+    margin: auto;
+    color: rgb(68, 68, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+div {
+  margin-bottom: 10px;
+}

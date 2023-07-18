@@ -1,0 +1,32 @@
+p {
+    color: rgb(68, 68, 179);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+}
+
+.answer-box {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 60px;
+}
+
+.center {
+    align-items: center;
+}
+
+.disabled {
+    background: lightgray !important;
+    color: black;
+    cursor: default;
+}
+
+.input-range {
+    accent-color: rgb(68, 68, 179);
+    background-color: #aaa;
+    margin-top: 20px;
+    outline: none;
+    width: 300px;
+}
