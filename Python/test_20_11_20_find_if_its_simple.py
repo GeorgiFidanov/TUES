@@ -1,5 +1,5 @@
 def simple(n):
-    i = 2
+    i = 2               
     if n < 1:
         print("Wrong number is:", n)
         return -1
@@ -16,7 +16,7 @@ def simple(n):
         print("It's not simple:", n)
         return 1
 
-    while n % i != 0:
+    while n % i == 1:
         i = i + 1
 
         if n % i == 0:

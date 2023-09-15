@@ -1,6 +1,7 @@
 def print_hi(name):
     print(f'Hi, {name}')
 
+my_dictionary = {'kucheto skacha mnogo burzo'}
 
 def sum_of_digits(n):
     p = 0
@@ -10,13 +11,5 @@ def sum_of_digits(n):
     return p
 
 
-# def find_dictionary
-
-
-if __name__ == '__main__':
-
-    my_dictionary = {'kucheto skacha mnogo burzo'}
-    n = 1234
-
-    print_hi('PyCharm')
-    print(sum_of_digits(n))
+print_hi("Ela")
+print(sum_of_digits(1234))
