@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+    .productBox {
+       width: 50%;
+    }
+   }
+   
+
+.productBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 30%;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+.products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+    .productBox {
+    width: 30%;
+  }
+  .productBox .title{
+    font-size: 12px;
+  }
+  .productBox .desc{
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "e839dd5f-cd45-4a37-ad84-9db95ac6d946",
+		"name": "ELSYS Dash Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23789022"
+	},
+	"item": [
+		{
+			"name": "Create Thermometer",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"label\": \"Thermometer 3\",\r\n    \"manufacturer\": \"Bosch\",\r\n    \"room\": \"Garage\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:{{port}}/thermometers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"thermometers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Temperature Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:{{port}}/thermometers/temperature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"thermometers",
+						"temperature"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "8000",
+			"type": "string"
+		}
+	]
+}

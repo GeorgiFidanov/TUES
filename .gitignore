@@ -8,3 +8,4 @@ GitHub/
 *.iml
 __pycache__/
 *.db
+.web/

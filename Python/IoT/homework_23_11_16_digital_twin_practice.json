@@ -1,0 +1,39 @@
+{
+  "thingID": "ring_camera",
+  "policyId": "ring_camera",
+  "attributes": {
+    "manufacturer": "Ring",
+    "model": "Doorbell Pro",
+    "location": "Front Door"
+  },
+  "features": {
+    "cameraStatus": {
+      "properties": {
+        "status": "active",
+        "resolution": "1920x1080",
+        "fieldOfView": "120 degrees"
+      }
+    },
+    "motionDetection": {
+      "properties": {
+        "enabled": true,
+        "sensitivity": "medium",
+        "detectionZones": ["frontyard", "porch", "doorstep"]
+      }
+    },
+    "recordingStatus": {
+      "properties": {
+        "status": false,
+        "storageCapacity": "50%",
+        "recordedEvents": 20
+      }
+    },
+    "liveFeed": {
+      "properties": {
+        "url": "http://ring-camera-feed-url",
+        "streamingQuality": "high",
+        "latency": "low"
+      }
+    }
+  }
+}
